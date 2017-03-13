@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+
+/* label focus color */
+.input-field input:focus + label {
+    color: #ff4081 !important; /*GO TO LOGIN_ACCENT_COLOR*/
+}
+/* label underline focus color */
+.input-field input:focus {
+    border-bottom: 1px solid #ff4081 !important; /*GO TO LOGIN_ACCENT_COLOR*/
+    box-shadow: 0 1px 0 0 #ff4081 !important; /*GO TO LOGIN_ACCENT_COLOR*/
+}
