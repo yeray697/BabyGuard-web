@@ -30,7 +30,7 @@ function printNav($active,$classes, $id){
 <ul class="<?php echo $classes; ?>" <?php if (!IsNullOrEmptyString($id)) { echo "id=\"$id\""; } ?>>
                 <li<?php if ($active=="home"){ echo " class=\"active\"";}?>><a href="index.php">Home</a></li>
                 <li<?php if ($active=="login"){ echo " class=\"active\"";}?>><a href="login.php">Login</a></li>
-                <li<?php if ($active=="manage"){ echo " class=\"active\"";}?>><a href="">Manage</a></li>
+                <li<?php if ($active=="manage"){ echo " class=\"active\"";}?>><a href="manage.php">Manage</a></li>
                 <li<?php if ($active=="about"){ echo " class=\"active\"";}?>><a href="">About</a></li>
                 <li<?php if ($active=="hire"){ echo " class=\"active\"";}?>><a href="">Hire</a></li>
             </ul>

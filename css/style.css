@@ -8,6 +8,35 @@ main {
     flex: 1 0 auto;
 }
 
+.manage-header{
+    background: url("../img/manage-background.png");
+    width:100%;
+    height:40vh;
+    background-color:#3F51B5;
+    -webkit-flex-shrink:0;
+    -ms-flex-negative:0;
+    flex-shrink:0;
+    background-position:center;
+    background-size:cover
+}
+.manage-content{
+    padding: 25px;
+    margin-top:-35vh;
+    -webkit-flex-shrink:0;
+    -ms-flex-negative:0;
+    flex-shrink:0;
+    -ms-flex:0 1 auto;
+    display:block;
+    overflow-y:auto;
+    overflow-x:hidden;
+    -webkit-box-flex:1;
+    -webkit-flex-grow:1;
+    -ms-flex-positive:1;
+    flex-grow:1;
+    z-index:1;
+    -webkit-overflow-scrolling:touch
+}
+
 
 /* label focus color */
 .input-field input:focus + label {
