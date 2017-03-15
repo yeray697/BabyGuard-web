@@ -26,13 +26,128 @@ function printHeader($print_nav,$active=""){
 }
 function printNav($active,$ul_classes, $ul_id, $li_classes){
     ?>
+<<<<<<< HEAD
 <ul class="<?php echo $ul_classes; ?>" <?php if (!IsNullOrEmptyString($ul_id)) { echo "id=\"$ul_id\""; } ?>>
                 <li class="<?php if ($active=="home"){ echo "active";}?>"><a href="index.php"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>>Home</a></li>
                 <li class="<?php if ($active=="login"){ echo "active";}?>"><a href="login.php"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>>Login</a></li>
                 <li class="<?php if ($active=="manage"){ echo "active";}?>"><a href=""<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>>Manage</a></li>
                 <li class="<?php if ($active=="about"){ echo "active";}?>"><a href=""<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>>About</a></li>
                 <li class="<?php if ($active=="prices"){ echo "active";}?>"><a href="prices.php"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>>Prices</a></li>
+=======
+<ul class="<?php echo $classes; ?>" <?php if (!IsNullOrEmptyString($id)) { echo "id=\"$id\""; } ?>>
+                <li<?php if ($active=="home"){ echo " class=\"active\"";}?>><a href="index.php">Home</a></li>
+                <li<?php if ($active=="login"){ echo " class=\"active\"";}?>><a href="login.php">Login</a></li>
+                <li<?php if ($active=="manage"){ echo " class=\"active\"";}?>><a href="manage.php">Manage</a></li>
+                <li<?php if ($active=="about"){ echo " class=\"active\"";}?>><a href="">About</a></li>
+                <li<?php if ($active=="hire"){ echo " class=\"active\"";}?>><a href="">Hire</a></li>
+>>>>>>> ce3703e79b213966cc97a4e3eefc09a37b944feb
             </ul>
+    <?php
+}
+function loadManageIds(){
+    ?>    <thead>
+                                <tr>
+                                    <th data-field="id">Id</th>
+                                    <th data-field="name">Name</th>
+                                    <th data-field="email">Email</th>
+                                    <th data-field="options">Options</th>
+                                </tr>
+                            </thead>
+    <?php
+}
+function loadManageContent(){
+    ?><tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Alvin</td>
+                                    <td>Eclair@gmail.com</td>
+                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Alan</td>
+                                    <td>Jellybean@gmail.com</td>
+                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Jonathan</td>
+                                    <td>Lollipop@gmail.com</td>
+                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Alvin</td>
+                                    <td>Eclair@gmail.com</td>
+                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Alan</td>
+                                    <td>Jellybean@gmail.com</td>
+                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Jonathan</td>
+                                    <td>Lollipop@gmail.com</td>
+                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Alvin</td>
+                                    <td>Eclair@gmail.com</td>
+                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Alan</td>
+                                    <td>Jellybean@gmail.com</td>
+                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Jonathan</td>
+                                    <td>Lollipop@gmail.com</td>
+                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Alvin</td>
+                                    <td>Eclair@gmail.com</td>
+                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>Alan</td>
+                                    <td>Jellybean@gmail.com</td>
+                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>Jonathan</td>
+                                    <td>Lollipop@gmail.com</td>
+                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>Alvin</td>
+                                    <td>Eclair@gmail.com</td>
+                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>Alan</td>
+                                    <td>Jellybean@gmail.com</td>
+                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
+                                </tr>
+                                <tr>
+                                    <td>15</td>
+                                    <td>Jonathan</td>
+                                    <td>Lollipop@gmail.com</td>
+                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
+                                </tr>
+                            </tbody>
     <?php
 }
 function printFooter($print_footer){
