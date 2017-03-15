@@ -26,21 +26,12 @@ function printHeader($print_nav,$active=""){
 }
 function printNav($active,$ul_classes, $ul_id, $li_classes){
     ?>
-<<<<<<< HEAD
 <ul class="<?php echo $ul_classes; ?>" <?php if (!IsNullOrEmptyString($ul_id)) { echo "id=\"$ul_id\""; } ?>>
                 <li class="<?php if ($active=="home"){ echo "active";}?>"><a href="index.php"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>>Home</a></li>
                 <li class="<?php if ($active=="login"){ echo "active";}?>"><a href="login.php"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>>Login</a></li>
-                <li class="<?php if ($active=="manage"){ echo "active";}?>"><a href=""<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>>Manage</a></li>
+                <li class="<?php if ($active=="manage"){ echo "active";}?>"><a href="manage.php"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>>Manage</a></li>
                 <li class="<?php if ($active=="about"){ echo "active";}?>"><a href=""<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>>About</a></li>
                 <li class="<?php if ($active=="prices"){ echo "active";}?>"><a href="prices.php"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>>Prices</a></li>
-=======
-<ul class="<?php echo $classes; ?>" <?php if (!IsNullOrEmptyString($id)) { echo "id=\"$id\""; } ?>>
-                <li<?php if ($active=="home"){ echo " class=\"active\"";}?>><a href="index.php">Home</a></li>
-                <li<?php if ($active=="login"){ echo " class=\"active\"";}?>><a href="login.php">Login</a></li>
-                <li<?php if ($active=="manage"){ echo " class=\"active\"";}?>><a href="manage.php">Manage</a></li>
-                <li<?php if ($active=="about"){ echo " class=\"active\"";}?>><a href="">About</a></li>
-                <li<?php if ($active=="hire"){ echo " class=\"active\"";}?>><a href="">Hire</a></li>
->>>>>>> ce3703e79b213966cc97a4e3eefc09a37b944feb
             </ul>
     <?php
 }

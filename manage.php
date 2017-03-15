@@ -1,4 +1,4 @@
-<?php require_once "functions.php";?>
+<?php require_once "config.php";?>
 <?php printHeader(true,"manage"); ?>
 <main>
 <div class="manage-header"></div>
