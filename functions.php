@@ -16,130 +16,72 @@ function printHeader($print_nav,$active=""){
         <div class="nav-wrapper <?php echo HEADER_COLOR; ?>">
             <a href="" class="brand-logo">Logo</a>
             <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <?php printNav($active,"right hide-on-med-and-down","",""); ?>
-            <?php printNav($active,"side-nav","mobile-demo",""); ?>
+            <?php printMenu($active,"right hide-on-med-and-down","",""); ?>
+            <?php printMenu($active,"side-nav","mobile-demo",""); ?>
         </div> <!-- <div class="nav-wrapper"> -->
     </nav>
     <?php endif; ?>
 
     <?php
 }
-function printNav($active,$ul_classes, $ul_id, $li_classes){
+function printMenu($active,$ul_classes, $ul_id, $li_classes){
+    if (isLogged()){
+        printMenuLogged($active,$ul_classes, $ul_id, $li_classes);
+    } else {
+        printMenuNotLogged($active,$ul_classes, $ul_id, $li_classes);        
+    }
+}
+function printMenuLogged($active,$ul_classes, $ul_id, $li_classes){
     ?>
 <ul class="<?php echo $ul_classes; ?>" <?php if (!IsNullOrEmptyString($ul_id)) { echo "id=\"$ul_id\""; } ?>>
-                <li class="<?php if ($active=="home"){ echo "active";}?>"><a href="index.php"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>><span data-translatekey="menu_home">Home</span></a></li>
-                <li class="<?php if ($active=="login"){ echo "active";}?>"><a href="login.php"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>><span data-translatekey="menu_login">Login</span></a></li>
-                <li class="<?php if ($active=="manage"){ echo "active";}?>"><a href="manage.php"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>><span data-translatekey="menu_manage">Manage</span></a></li>
-                <li class="<?php if ($active=="about"){ echo "active";}?>"><a href=""<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>><span data-translatekey="menu_about">About</span></a></li>
-                <li class="<?php if ($active=="prices"){ echo "active";}?>"><a href="prices.php"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>><span data-translatekey="menu_prices">Prices</span></a></li>
+                <li class="<?php if ($active=="home"){ echo "active";}?>"><a href="<?php echo INDEX_PHP; ?>"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>><span data-translatekey="menu_home">Home</span></a></li>
+                <li class="<?php if ($active=="manage"){ echo "active";}?>"><a href="<?php echo MANAGE_PHP; ?>"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>><span data-translatekey="menu_manage">Manage</span></a></li>
+                <li class="<?php if ($active=="about"){ echo "active";}?>"><a href="<?php echo ABOUT_PHP; ?>"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>><span data-translatekey="menu_about">About</span></a></li>
+                <li class="<?php if ($active=="prices"){ echo "active";}?>"><a href="<?php echo PRICES_PHP; ?>"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>><span data-translatekey="menu_prices">Prices</span></a></li>                
+                <li><a href="<?php echo LOGOUT_PHP; ?>"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>><span data-translatekey="menu_logout">Log Out</span></a></li>
+            </ul>
+    <?php
+}
+
+function printMenuNotLogged($active,$ul_classes, $ul_id, $li_classes){
+    ?>
+<ul class="<?php echo $ul_classes; ?>" <?php if (!IsNullOrEmptyString($ul_id)) { echo "id=\"$ul_id\""; } ?>>
+                <li class="<?php if ($active=="home"){ echo "active";}?>"><a href="<?php echo INDEX_PHP; ?>"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>><span data-translatekey="menu_home">Home</span></a></li>
+                <li class="<?php if ($active=="about"){ echo "active";}?>"><a href="<?php echo ABOUT_PHP; ?>"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>><span data-translatekey="menu_about">About</span></a></li>
+                <li class="<?php if ($active=="prices"){ echo "active";}?>"><a href="<?php echo PRICES_PHP; ?>"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>><span data-translatekey="menu_prices">Prices</span></a></li>
+                <li class="<?php if ($active=="login"){ echo "active";}?>"><a href="<?php echo LOGIN_PHP; ?>"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>><span data-translatekey="menu_login">Login</span></a></li>
             </ul>
     <?php
 }
 function loadManageIds(){
     ?>    <thead>
                                 <tr>
-                                    <th data-field="id"><span data-translatekey="manage_users_id">Id</span></th>
-                                    <th data-field="name"><span data-translatekey="manage_users_name">Name</span></th>
-                                    <th data-field="email"><span data-translatekey="manage_users_email">Email</span></th>
-                                    <th data-field="options"><span data-translatekey="manage_users_options">Options</span></th>
+                                    <th data-field="id"><span data-translatekey="manage_users_table_id">Id</span></th>
+                                    <th data-field="name"><span data-translatekey="manage_users_table_name">Name</span></th>
+                                    <th data-field="email"><span data-translatekey="manage_users_table_email">Email</span></th>
+                                    <th data-field="options"><span data-translatekey="manage_users_table_options">Options</span></th>
                                 </tr>
                             </thead>
     <?php
 }
+function parseHandlerUser($id, $name, $email){
+    echo "<tr>
+                                    <td>".$id."</td>
+                                    <td>".$name."</td>
+                                    <td>".$email."</td>
+                                    <td><a href='".MANAGE_USER_PHP."?action=edit&id=".$id."'><i class=\"material-icons\">mode_edit</i></a> <a onclick=\"openDeleteUserModal(".$id.")\"><i class=\"material-icons cursor-pointer\">delete</i></a></td>
+                                </tr>";
+}
 function loadManageContent(){
-    ?><tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Alvin</td>
-                                    <td>Eclair@gmail.com</td>
-                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Alan</td>
-                                    <td>Jellybean@gmail.com</td>
-                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop@gmail.com</td>
-                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Alvin</td>
-                                    <td>Eclair@gmail.com</td>
-                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Alan</td>
-                                    <td>Jellybean@gmail.com</td>
-                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop@gmail.com</td>
-                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>Alvin</td>
-                                    <td>Eclair@gmail.com</td>
-                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>Alan</td>
-                                    <td>Jellybean@gmail.com</td>
-                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
-                                </tr>
-                                <tr>
-                                    <td>9</td>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop@gmail.com</td>
-                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
-                                </tr>
-                                <tr>
-                                    <td>10</td>
-                                    <td>Alvin</td>
-                                    <td>Eclair@gmail.com</td>
-                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
-                                </tr>
-                                <tr>
-                                    <td>11</td>
-                                    <td>Alan</td>
-                                    <td>Jellybean@gmail.com</td>
-                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
-                                </tr>
-                                <tr>
-                                    <td>12</td>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop@gmail.com</td>
-                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
-                                </tr>
-                                <tr>
-                                    <td>13</td>
-                                    <td>Alvin</td>
-                                    <td>Eclair@gmail.com</td>
-                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
-                                </tr>
-                                <tr>
-                                    <td>14</td>
-                                    <td>Alan</td>
-                                    <td>Jellybean@gmail.com</td>
-                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
-                                </tr>
-                                <tr>
-                                    <td>15</td>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop@gmail.com</td>
-                                    <td><i class="material-icons">mode_edit</i> <i class="material-icons">delete</i></td>
-                                </tr>
-                            </tbody>
-    <?php
+    echo "<tbody>";
+    for ($i=1; $i <= 30; $i++) { 
+        parseHandlerUser($i,"Alvin","alvin@gmail.com");
+        $i++;
+        parseHandlerUser($i,"Alan","alan@gmail.com");
+        $i++;
+        parseHandlerUser($i,"Jonathan","jonathan@gmail.com");
+    }
+    echo "</tbody>";
 }
 function printFooter($print_footer){
 ?>
@@ -153,7 +95,7 @@ function printFooter($print_footer){
                 </div> <!-- <div class="col l6 s12"> -->
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Links</h5>
-                    <?php printNav("","","","grey-text text-lighten-3"); ?>
+                    <?php printMenu("","","","grey-text text-lighten-3"); ?>
                 </div> <!-- <div class="col l4 offset-l2 s12"> -->
             </div> <!-- <div class="row"> -->
         </div> <!-- <div class="container"> -->
@@ -179,6 +121,14 @@ function IsNullOrEmptyString($question){
 }
 
 function isLogged(){
-    return false;
+    return true;
 }
+
+define ("ADMIN_USER_TYPE","1");
+define ("NURSERY_USER_TYPE","2");
+
+function getUserType(){
+    return NURSERY_USER_TYPE;
+}
+
 ?>

@@ -1,12 +1,14 @@
 {
     "menu_home": "Inicio",
     "menu_login": "Iniciar sesión",
+    "menu_logout": "Cerrar sesión",
     "menu_manage": "Gestión",
     "menu_about": "Acerca de",
     "menu_prices": "Precios",
-    "manage_users_id": "Id",
-    "manage_users_name": "Nombre",
-    "manage_users_email": "Correo",
-    "manage_users_options": "Opciones",
+    "manage_users_table_id": "Id",
+    "manage_users_table_name": "Nombre",
+    "manage_users_table_email": "Correo electrónico",
+    "manage_users_table_options": "Opciones",
+    "manage_users_table_add": "Añadir",
     "footer_copyright": "Desarrollado por"
 }

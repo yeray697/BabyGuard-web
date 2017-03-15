@@ -24,6 +24,11 @@ main {
     background-size:cover
 }
 
+.manage-user-fab-add{
+    right: -18px !important;
+    top: 50px !important;
+}
+
 .manage-content{
     padding: 25px;
     margin-top:-35vh;
@@ -40,6 +45,10 @@ main {
     flex-grow:1;
     z-index:1;
     -webkit-overflow-scrolling:touch
+}
+
+.cursor-pointer{
+    cursor:pointer;
 }
 
 /* label focus color */
