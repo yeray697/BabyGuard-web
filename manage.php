@@ -5,7 +5,7 @@
     <div class="row grey lighten-4">
         <div class="col s12">
             <div class="container manage-content">
-                <div class="row">
+                <div class="row table-manage-user">
                         <div class="card-panel z-depth-2">
                             <a href="
                             <?php
