@@ -1,4 +1,4 @@
-<?php require_once "functions.php";?>
+<?php require_once "config.php";?>
 <?php printHeader(false); ?>
 <main class="<?php echo LOGIN_COLOR;?>">
     <div class="container">
@@ -24,8 +24,8 @@
                         </div>
                     </div>
                     <div class="card-action">
-                        <a href="#" class="<?php echo LOGIN_ACCENT_COLOR;?>">Forgot Password?</a>
-                        <a href="#" class="right <?php echo LOGIN_ACCENT_COLOR;?>">Register</a>
+                        <a href="forgot-pass.php" class="<?php echo LOGIN_ACCENT_COLOR;?>">Forgot Password?</a>
+                        <a href="prices.php" class="right <?php echo LOGIN_ACCENT_COLOR;?>">Hire</a>
                     </div>
                 </div>
             </div>

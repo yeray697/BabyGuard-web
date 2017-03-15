@@ -1,5 +1,4 @@
 <?php
-require_once "config.php";
 function printHeader($print_nav,$active=""){
     ?>
 <!DOCTYPE html>
@@ -17,22 +16,22 @@ function printHeader($print_nav,$active=""){
         <div class="nav-wrapper <?php echo HEADER_COLOR; ?>">
             <a href="#!" class="brand-logo">Logo</a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <?php printNav($active,"right hide-on-med-and-down",""); ?>
-            <?php printNav($active,"side-nav","mobile-demo"); ?>
+            <?php printNav($active,"right hide-on-med-and-down","",""); ?>
+            <?php printNav($active,"side-nav","mobile-demo",""); ?>
         </div> <!-- <div class="nav-wrapper"> -->
     </nav>
     <?php endif; ?>
 
     <?php
 }
-function printNav($active,$classes, $id){
+function printNav($active,$ul_classes, $ul_id, $li_classes){
     ?>
-<ul class="<?php echo $classes; ?>" <?php if (!IsNullOrEmptyString($id)) { echo "id=\"$id\""; } ?>>
-                <li<?php if ($active=="home"){ echo " class=\"active\"";}?>><a href="index.php">Home</a></li>
-                <li<?php if ($active=="login"){ echo " class=\"active\"";}?>><a href="login.php">Login</a></li>
-                <li<?php if ($active=="manage"){ echo " class=\"active\"";}?>><a href="">Manage</a></li>
-                <li<?php if ($active=="about"){ echo " class=\"active\"";}?>><a href="">About</a></li>
-                <li<?php if ($active=="hire"){ echo " class=\"active\"";}?>><a href="">Hire</a></li>
+<ul class="<?php echo $ul_classes; ?>" <?php if (!IsNullOrEmptyString($ul_id)) { echo "id=\"$ul_id\""; } ?>>
+                <li class="<?php if ($active=="home"){ echo "active";}?>"><a href="index.php"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>>Home</a></li>
+                <li class="<?php if ($active=="login"){ echo "active";}?>"><a href="login.php"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>>Login</a></li>
+                <li class="<?php if ($active=="manage"){ echo "active";}?>"><a href=""<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>>Manage</a></li>
+                <li class="<?php if ($active=="about"){ echo "active";}?>"><a href=""<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>>About</a></li>
+                <li class="<?php if ($active=="prices"){ echo "active";}?>"><a href="prices.php"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>>Prices</a></li>
             </ul>
     <?php
 }
@@ -48,19 +47,13 @@ function printFooter($print_footer){
                 </div> <!-- <div class="col l6 s12"> -->
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Links</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                    </ul>
+                    <?php printNav("","","","grey-text text-lighten-3"); ?>
                 </div> <!-- <div class="col l4 offset-l2 s12"> -->
             </div> <!-- <div class="row"> -->
         </div> <!-- <div class="container"> -->
         <div class="footer-copyright <?php echo FOOTER_COPYRIGHT_COLOR;?>">
             <div class="container">
-                © 2014 Copyright Text
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                 © <?php echo date("Y");?> Developed by <a href="https://ncatz.com">nCatz</a> 
             </div> <!-- <div class="container"> -->
         </div> <!-- <div class="footer-copyright"> -->
     </footer>
@@ -76,5 +69,9 @@ function printFooter($print_footer){
 // Function for basic field validation (present and neither empty nor only white space
 function IsNullOrEmptyString($question){
     return (!isset($question) || trim($question)==='');
+}
+
+function isLogged(){
+    return false;
 }
 ?>
