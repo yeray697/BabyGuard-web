@@ -14,8 +14,8 @@ function printHeader($print_nav,$active=""){
     <?php if ($print_nav) : ?>
     <nav>
         <div class="nav-wrapper <?php echo HEADER_COLOR; ?>">
-            <a href="#!" class="brand-logo">Logo</a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <a href="" class="brand-logo">Logo</a>
+            <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <?php printNav($active,"right hide-on-med-and-down","",""); ?>
             <?php printNav($active,"side-nav","mobile-demo",""); ?>
         </div> <!-- <div class="nav-wrapper"> -->
@@ -27,21 +27,21 @@ function printHeader($print_nav,$active=""){
 function printNav($active,$ul_classes, $ul_id, $li_classes){
     ?>
 <ul class="<?php echo $ul_classes; ?>" <?php if (!IsNullOrEmptyString($ul_id)) { echo "id=\"$ul_id\""; } ?>>
-                <li class="<?php if ($active=="home"){ echo "active";}?>"><a href="index.php"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>>Home</a></li>
-                <li class="<?php if ($active=="login"){ echo "active";}?>"><a href="login.php"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>>Login</a></li>
-                <li class="<?php if ($active=="manage"){ echo "active";}?>"><a href="manage.php"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>>Manage</a></li>
-                <li class="<?php if ($active=="about"){ echo "active";}?>"><a href=""<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>>About</a></li>
-                <li class="<?php if ($active=="prices"){ echo "active";}?>"><a href="prices.php"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>>Prices</a></li>
+                <li class="<?php if ($active=="home"){ echo "active";}?>"><a href="index.php"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>><span data-translatekey="menu_home">Home</span></a></li>
+                <li class="<?php if ($active=="login"){ echo "active";}?>"><a href="login.php"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>><span data-translatekey="menu_login">Login</span></a></li>
+                <li class="<?php if ($active=="manage"){ echo "active";}?>"><a href="manage.php"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>><span data-translatekey="menu_manage">Manage</span></a></li>
+                <li class="<?php if ($active=="about"){ echo "active";}?>"><a href=""<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>><span data-translatekey="menu_about">About</span></a></li>
+                <li class="<?php if ($active=="prices"){ echo "active";}?>"><a href="prices.php"<?php if (!IsNullOrEmptyString($li_classes)) { echo " class=\"$li_classes\""; } ?>><span data-translatekey="menu_prices">Prices</span></a></li>
             </ul>
     <?php
 }
 function loadManageIds(){
     ?>    <thead>
                                 <tr>
-                                    <th data-field="id">Id</th>
-                                    <th data-field="name">Name</th>
-                                    <th data-field="email">Email</th>
-                                    <th data-field="options">Options</th>
+                                    <th data-field="id"><span data-translatekey="manage_users_id">Id</span></th>
+                                    <th data-field="name"><span data-translatekey="manage_users_name">Name</span></th>
+                                    <th data-field="email"><span data-translatekey="manage_users_email">Email</span></th>
+                                    <th data-field="options"><span data-translatekey="manage_users_options">Options</span></th>
                                 </tr>
                             </thead>
     <?php
@@ -159,13 +159,14 @@ function printFooter($print_footer){
         </div> <!-- <div class="container"> -->
         <div class="footer-copyright <?php echo FOOTER_COPYRIGHT_COLOR;?>">
             <div class="container">
-                 © <?php echo date("Y");?> Developed by <a href="https://ncatz.com">nCatz</a> 
+                 © <?php echo date("Y");?> <span data-translatekey="footer_copyright">Developed by</span> <a href="https://ncatz.com">nCatz</a>
             </div> <!-- <div class="container"> -->
         </div> <!-- <div class="footer-copyright"> -->
     </footer>
     <?php endif; ?>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/simple_i18n.min.js"></script>
     <script src="js/init.js"></script>
 </body>
 </html>
