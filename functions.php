@@ -113,13 +113,7 @@ function printFooter($print_footer){
     </footer>
     <?php endif; ?>
     <!-- Script to pass PHP variables to init.js -->
-    <script type="text/javascript">var manage_user_base_url = "<?php if(getUserType() == ADMIN_USER_TYPE) {
-        $baseUrl = MANAGE_NURSERY_PHP;
-    }
-    elseif (getUserType() == NURSERY_USER_TYPE){
-        $baseUrl = MANAGE_USER_PHP;
-    }
-    ?>";</script>
+    <script type="text/javascript">var manage_user_base_url = "<?php echo MANAGE_PHP;?>";</script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/simple_i18n.min.js"></script>

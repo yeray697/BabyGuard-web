@@ -34,7 +34,7 @@
     </div>
     <div class="modal-footer">
       <a id="delete-user-modal-yes" href="javascript:void(0)" class="modal-action modal-close waves-effect waves-green btn-flat">Sí</a>
-      <a href="" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+      <a href="javascript:void(0);" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
     </div>
   </div>
 </main>
