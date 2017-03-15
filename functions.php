@@ -65,11 +65,17 @@ function loadManageIds(){
     <?php
 }
 function parseHandlerUser($id, $name, $email){
+    if(getUserType() == ADMIN_USER_TYPE) {
+        $baseUrl = MANAGE_NURSERY_PHP;
+    }
+    elseif (getUserType() == NURSERY_USER_TYPE){
+        $baseUrl = MANAGE_USER_PHP;
+    }
     echo "<tr>
                                     <td>".$id."</td>
                                     <td>".$name."</td>
                                     <td>".$email."</td>
-                                    <td><a href='".MANAGE_USER_PHP."?action=edit&id=".$id."'><i class=\"material-icons\">mode_edit</i></a> <a onclick=\"openDeleteUserModal(".$id.")\"><i class=\"material-icons cursor-pointer\">delete</i></a></td>
+                                    <td><a href='".$baseUrl."?action=edit&id=".$id."'><i class=\"material-icons\">mode_edit</i></a> <a onclick=\"openDeleteUserModal(".$id.")\"><i class=\"material-icons cursor-pointer\">delete</i></a></td>
                                 </tr>";
 }
 function loadManageContent(){
@@ -106,6 +112,14 @@ function printFooter($print_footer){
         </div> <!-- <div class="footer-copyright"> -->
     </footer>
     <?php endif; ?>
+    <!-- Script to pass PHP variables to init.js -->
+    <script type="text/javascript">var manage_user_base_url = "<?php if(getUserType() == ADMIN_USER_TYPE) {
+        $baseUrl = MANAGE_NURSERY_PHP;
+    }
+    elseif (getUserType() == NURSERY_USER_TYPE){
+        $baseUrl = MANAGE_USER_PHP;
+    }
+    ?>";</script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/simple_i18n.min.js"></script>
@@ -128,7 +142,7 @@ define ("ADMIN_USER_TYPE","1");
 define ("NURSERY_USER_TYPE","2");
 
 function getUserType(){
-    return NURSERY_USER_TYPE;
+    return ADMIN_USER_TYPE;
 }
 
 ?>

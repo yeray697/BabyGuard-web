@@ -21,7 +21,6 @@
                             <?php loadManageIds(); ?>
                             <?php loadManageContent(); ?>
                         </table>
-                        <br><br>
                         </div>
                     </div>
                 </div>
