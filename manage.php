@@ -16,7 +16,7 @@
                                 echo MANAGE_USER_PHP;
                             }
                             ?>
-                            " class="right waves-effect waves-light btn <?php echo ACCENT_BTN_ADD_USER_COLOR; ?>"><i class="material-icons right">perm_identity</i><span data-translatekey="manage_users_table_add">Add</span></a>
+                            " class="manage-users-add waves-effect waves-light btn <?php echo ACCENT_BTN_ADD_USER_COLOR; ?>"><i class="material-icons right">perm_identity</i><span data-translatekey="manage_users_table_add">Add</span></a>
                             <table class="centered bordered highlight responsive-table">
                             <?php loadManageIds(); ?>
                             <?php loadManageContent(); ?>

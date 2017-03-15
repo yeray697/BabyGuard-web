@@ -46,6 +46,16 @@ main {
     z-index:1;
     -webkit-overflow-scrolling:touch
 }
+.manage-users-add{
+    float:none;
+    margin: 10px;
+    display:block;
+}
+@media only screen and (min-width: 601px){
+    .manage-users-add{
+        float: right;
+    }
+}
 
 .cursor-pointer{
     cursor:pointer;
