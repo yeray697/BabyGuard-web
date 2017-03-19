@@ -6,9 +6,11 @@
     "menu_about": "Acerca de",
     "menu_prices": "Precios",
     "manage_users_table_id": "Id",
-    "manage_users_table_name": "Nombre",
+    "manage_users_table_name": "Usuario",
     "manage_users_table_email": "Correo electrónico",
     "manage_users_table_options": "Opciones",
     "manage_users_table_add": "Añadir",
-    "footer_copyright": "Desarrollado por"
+    "footer_copyright": "Desarrollado por",
+    "manage_dialog_title":"¿Deseas eliminar a ",
+    "manage_dialog_subtitle":"No podrás recuperarlo"
 }

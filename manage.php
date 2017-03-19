@@ -29,8 +29,8 @@
     </div>
     <div id="delete-user-modal" class="modal">
     <div class="modal-content">
-      <h4>¿Deseas eliminar a '???'?</h4>
-      <p>No podrás recuperarlo.</p>
+      <h4><span data-translatekey="manage_dialog_title">Do you want to remove </span><span id="manage_dialog_title_name"></span>?</h4>
+      <p><span data-translatekey="manage_dialog_subtitle">You will not be able to restore it.</span></p>
     </div>
     <div class="modal-footer">
       <a id="delete-user-modal-yes" href="javascript:void(0)" class="modal-action modal-close waves-effect waves-green btn-flat">Sí</a>

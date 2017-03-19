@@ -75,7 +75,7 @@ function parseHandlerUser($id, $name, $email){
                                     <td>".$id."</td>
                                     <td>".$name."</td>
                                     <td>".$email."</td>
-                                    <td><a href='".$baseUrl."?action=edit&id=".$id."'><i class=\"material-icons\">mode_edit</i></a> <a onclick=\"openDeleteUserModal(".$id.")\"><i class=\"material-icons cursor-pointer\">delete</i></a></td>
+                                    <td><a href='".$baseUrl."?action=edit&id=".$id."'><i class=\"material-icons\">mode_edit</i></a> <a onclick=\"openDeleteUserModal(".$id.",'".$name."')\"><i class=\"material-icons cursor-pointer\">delete</i></a></td>
                                 </tr>";
 }
 function loadManageContent(){
