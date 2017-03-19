@@ -77,3 +77,21 @@ main {
     border-bottom: 1px solid #ff4081 !important; /*GO TO LOGIN_ACCENT_COLOR*/
     box-shadow: 0 1px 0 0 #ff4081 !important; /*GO TO LOGIN_ACCENT_COLOR*/
 }
+
+
+.input-group {
+    display: table;
+}
+
+.input-group input, .suffix {
+    display: table-cell;
+}
+
+.suffix {
+    width:1%;
+}
+input, button, submit {
+    border:none;
+    background: transparent;
+    text-transform: uppercase;
+} 

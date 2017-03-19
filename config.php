@@ -25,5 +25,6 @@ define('MANAGE_USER_PHP','manage-user.php');
 define('PRICES_PHP','prices.php');
 define('ABOUT_PHP','about.php');
 define('LOGOUT_PHP','logout.php');
+define('ADD_NURSERY_PHP','add_nursery.php');
 require_once FUNCTIONS_PHP;
 ?>
